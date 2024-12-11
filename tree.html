@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            width: 800px;
+        }
+
+        .balls-container {
+            position: relative;
+            margin: -500px auto 0; /* Position balls on tree */
+            width: 300px;
+            height: 400px;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+            position: absolute;
+            background-color: green; /* Default color */
+        }
+
+        .ball:nth-child(1) {
+            top: 60px;
+            left: 90px;
+        }
+        .ball:nth-child(7) {
+            top: 10px;
+            left: 130px;
+        }
+        .ball:nth-child(8) {
+            top: 48px;
+            left: 177px;
+            width: 10px;
+            height: 10px;
+        }
+
+        .ball:nth-child(2) {
+            top: 138px;
+            left: 146px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .ball:nth-child(3) {
+            top: 145px;
+            left: 70px;
+        }
+
+        .ball:nth-child(4) {
+            top: 175px;
+            left: 103px;
+        }
+
+        .ball:nth-child(5) {
+            top: 298px;
+            left: 51px;
+        }
+        .ball:nth-child(6) {
+            top: 338px;
+            left: 202px;
+        }
+        .ball:nth-child(9) {
+            top: 355px;
+            left: 140px;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="Christmas-Tree-Icon-Graphics-7052957-1.jpg" alt="Christmas Tree">
+    <div class="balls-container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+
+    <script>
+        const balls = document.querySelectorAll(".ball");
+
+        document.addEventListener("keydown", function (e) {
+            let color = "";
+
+            if (e.key === "g" || e.key === "G") {
+                color = "green";
+            } else if (e.key === "r" || e.key === "R") {
+                color = "red";
+            } else if (e.key === "b" || e.key === "B") {
+                color = "blue";
+            }
+
+            if (color) {
+                balls.forEach(ball => {
+                    ball.style.backgroundColor = color;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
