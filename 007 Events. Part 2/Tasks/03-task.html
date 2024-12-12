@@ -11,12 +11,13 @@
             display: inline-block;
             width: 100px;
             height: 100px;
-            background-color: green;
+            background-color: rgba(0, 128, 0, 0.627);
             margin: 10px;
         }
 
         .border {
-            border: 1px solid red;
+            border: 3px solid red;
+            background-color: green;
         }
     </style>
 </head>
@@ -33,18 +34,33 @@
         красного цвета на соответствующий div. Если зажаты клавиши Ctrl + A, то красная рамка добавляется сразу
         для всех div
         */
-        const squares = document.querySelectorAll("div");
+        let square = document.getElementsByTagName("div");
 
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "1") {
-                squares[0]?.classList.add("border"); // Add border to the first div
-            } else if (e.key === "2") {
-                squares[1]?.classList.add("border"); // Add border to the second div
-            } else if (e.key === "3") {
-                squares[2]?.classList.add("border"); // Add border to the third div
-            } else if (e.ctrlKey && e.key.toLowerCase() === "a") {
-                squares.forEach(square => square.classList.add("border")); // Add border to all divs
+
+        document.addEventListener("keydown", function (e) 
+        {
+            if (e.key === "1") 
+            {
+                square[0].classList.add("border");
             }
+            else if (e.key === "2") 
+            {
+                square[1].classList.add("border");
+            }
+            else if (e.key === "3") 
+            {
+                square[2].classList.add("border");
+            } 
+            else if (e.ctrlKey && e.key === "a") 
+            {
+                e.preventDefault();
+                Array.from(square).forEach(square => square.classList.add("border"));
+            }
+            else if (e.key === "Delete") 
+            {
+                Array.from(square).forEach(square => square.classList.remove("border"));
+            }
+
         });
     </script>
 </body>
